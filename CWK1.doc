@@ -1,0 +1,33 @@
+High-level description of the security features of an OS file system
+The Windows operating system file system includes the following security features:
+
+    Access Control: restricts access to files and folders based on user accounts and permissions.
+
+    Encryption: provides protection for data stored on disk by converting it into unreadable ciphertext.
+
+    User Account Control (UAC): helps prevent unauthorized changes to the system by prompting the user for permission to run programs with elevated privileges.
+
+    Firewall: blocks unwanted network traffic and helps protect against malicious attacks.
+
+    BitLocker: provides full-disk encryption to protect data on lost or stolen devices.
+
+    Defender: an integrated antivirus and antimalware solution that helps protect the system from malware attacks.
+
+    SmartScreen: helps protect against phishing and malware by warning the user when visiting potentially dangerous websites.
+
+These security features help ensure the protection and confidentiality of sensitive data stored on the system, and prevent unauthorized access and modifications.
+The Windows operating system uses the NTFS (New Technology File System) as its primary file system. NTFS was introduced in 1993 as a part of the Windows NT 3.1 operating system and has since been the default file system for all versions of Windows.
+
+NTFS provides a number of advanced features compared to its predecessor, the FAT (File Allocation Table) file system, including:
+
+    Increased maximum file and partition size: NTFS can support much larger files and partitions compared to FAT.
+
+    Improved security: NTFS implements file and folder permissions, which can be used to control access to files and directories.
+
+    Better error recovery: NTFS includes an improved mechanism for recovering from disk errors and inconsistencies.
+
+    Improved file indexing: NTFS implements a sophisticated file indexing system, allowing for fast file searches and improved disk management.
+
+    Increased data reliability: NTFS implements a journaling system that helps ensure data integrity and reliability, even in the event of a system crash or power failure.
+
+Overall, NTFS is a robust, reliable and secure file system that is well suited to the demands of modern computing.
