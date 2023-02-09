@@ -1,0 +1,9 @@
+COMP7024- Operating Systems Security and Development Coursework- Part 1: Security of an OS- File System Security
+1	High-level description of the security features of Windows file system
+The windows 11 file system has different security features to ensure the three security pillars such as confidentiality, integrity and availability. The latest version of windows presents as a primary file system NTFS(New Technology File System). One of the oldest security features is NTFS permission; it is implemented to set sharing permissions for folders or drives [1].
+2	Detailed description of how your selected OS supports and provides the listed security features.
+3	Comparison of the listed features in Windows 11 with IOS ...
+4	The effects that the listed security features have on application developers
+5	Conclusion
+References
+[1]	Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
