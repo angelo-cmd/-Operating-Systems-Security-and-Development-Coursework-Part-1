@@ -1,12 +1,22 @@
 COMP7024- Operating Systems Security and Development Coursework- Part 1: Security of an OS- File System Security
 1	High-level description of the security features of Windows file system
-The windows 11 file system has different security features to ensure the three security pillars such as confidentiality, integrity and availability. 
-The latest version of windows presents as a primary file system NTFS(New Technology File System). One of the oldest security features is NTFS permission; it is implemented to set sharing permissions for folders or drives [1]. 
-This feature differs from the user grant because permission is attached to objects, not files or entire drives. 
-NTFS permission provides more granular control and is possible only on drives using NTFS technology.
+The windows 11 file system has different security features to ensure the three security pillars
+such as confidentiality, integrity and availability. The latest version of windows presents as a
+primary file system NTFS(New Technology File System). One of the oldest security features
+is NTFS permission; it is implemented to set sharing permissions for folders or drives [1].
+This feature differs from the user grant because permission is attached to objects, not files or
+entire drives. NTFS permission provides more granular control and is possible only on drives
+using NTFS technology. Another security feature is BitLocker, a full-disk encryption tool in the
+Windows file system that guards against unauthorised access to data in the event of theft or loss
+of the device. Data saved on the drive is encrypted by BitLocker using encryption techniques,
+rendering it unintelligible to anyone lacking the proper decryption key. This maintains the
+confidentiality of the information and helps stop sensitive information from getting into the
+wrong hands [2].
 2	Detailed description of how your selected OS supports and provides the listed security features.
 3	Comparison of the listed features in Windows 11 with IOS ...
 4	The effects that the listed security features have on application developers
 5	Conclusion
 References
 [1]	Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
+[2] Frankroj, Bitlocker. [Online]. Available: https://learn.microsoft.com/en-us/windows/
+security/information-protection/bitlocker/bitlocker-overview
