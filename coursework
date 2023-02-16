@@ -12,6 +12,10 @@ of the device. Data saved on the drive is encrypted by BitLocker using encryptio
 rendering it unintelligible to anyone lacking the proper decryption key. This maintains the
 confidentiality of the information and helps stop sensitive information from getting into the
 wrong hands [2].
+The last feature this report will discuss is PDE ( personal data
+encryption ); it is introduced in the latest version of Windows 11 and provides an additional
+layer of encryption. In this case, the encryption is not performed on the entire drive or volumes
+but on the disk’s single files [3].
 2	Detailed description of how your selected OS supports and provides the listed security features.
 3	Comparison of the listed features in Windows 11 with IOS ...
 4	The effects that the listed security features have on application developers
@@ -20,3 +24,6 @@ References
 [1]	Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
 [2] Frankroj, Bitlocker. [Online]. Available: https://learn.microsoft.com/en-us/windows/
 security/information-protection/bitlocker/bitlocker-overview
+[3] Frankroj, Personal data encryption (pde). [Online]. Available: https://learn.microsoft.
+com/en-us/windows/security/information-protection/personal-data-encryption/
+overview-pde.
