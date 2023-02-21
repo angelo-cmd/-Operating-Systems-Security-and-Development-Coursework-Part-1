@@ -17,6 +17,13 @@ encryption ); it is introduced in the latest version of Windows 11 and provides 
 layer of encryption. In this case, the encryption is not performed on the entire drive or volumes
 but on the disk’s single files [3].
 2	Detailed description of how your selected OS supports and provides the listed security features.
+In Windows 11 operating system, a security principal’s level of access to files and folders is
+determined by the NTFS file system and share permissions. Microsoft has released version 3.1
+of NTFS in 2001 [4].These permissions can be assigned at the user’s discretion by anyone who
+has ownership of a file or folder, Modify permissions, or Full Control permissions. Operating
+system files and folders are given default permission hierarchies when Windows is first installed,
+but a user may need to change these permissions to comply with specific security requirements.
+s[5].
 3	Comparison of the listed features in Windows 11 with IOS ...
 4	The effects that the listed security features have on application developers
 5	Conclusion
