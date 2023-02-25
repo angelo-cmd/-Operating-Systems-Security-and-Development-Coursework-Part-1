@@ -17,20 +17,33 @@ encryption ); it is introduced in the latest version of Windows 11 and provides 
 layer of encryption. In this case, the encryption is not performed on the entire drive or volumes
 but on the disk’s single files [3].
 2	Detailed description of how your selected OS supports and provides the listed security features.
-In Windows 11 operating system, a security principal’s level of access to files and folders is
-determined by the NTFS file system and share permissions. Microsoft has released version 3.1
-of NTFS in 2001 [4].These permissions can be assigned at the user’s discretion by anyone who
-has ownership of a file or folder, Modify permissions, or Full Control permissions. Operating
-system files and folders are given default permission hierarchies when Windows is first installed,
-but a user may need to change these permissions to comply with specific security requirements.
-s[5].
+In Windows 11 operating system, the NTFS file system determines a security principal’s level
+of access and share permission to files and folders. Microsoft released the first version of NTFS
+in 2001 [4]. Permissions can be assigned at the user’s discretion by anyone who has ownership
+of a file or folder, Modify permissions, or Full Control permissions. Operating system files
+and folders are given default permission hierarchies when Windows is first installed, but a user
+may need to change these permissions to comply with specific security requirements [5]. When
+permission is set on a file or folder, the windows operating system link a security descriptor to
+that object. Indeed security settings of an object, like a file or directory, are defined by a security
+descriptor, which is a data structure in the NTFS file system. The security descriptor has four
+main components: owner, group, Discretionary Access Control List (DACL) and System Access
+Control List (SACL) [5].
+BitLocker protects your data, system files, and the Windows operating system by encrypting
+the whole hard drive. Advanced Encryption Standard (AES) and a Trusted Platform Module
+(TPM) chip, a piece of hardware that adds an additional degree of protection, are both used.
+Other authentication techniques supported by BitLocker include a PIN, a USB drive, and a
+network key.[riscrivere]
+Users must be logged in as an administrator and have a TPM chip installed on their computer
+in order to enable BitLocker on a Windows 11 machine. BitLocker can still be enabled even if
+the device lacks a TPM chip by creating a password for the encryption key or utilising a USB
+disc as a startup key[6].
 3	Comparison of the listed features in Windows 11 with IOS ...
 4	The effects that the listed security features have on application developers
 5	Conclusion
 References
-[1]	Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
-[2] Frankroj, Bitlocker. [Online]. Available: https://learn.microsoft.com/en-us/windows/
-security/information-protection/bitlocker/bitlocker-overview
+[1] Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
+[2] Bitlocker. [Online]. Available: https://learn.microsoft.com/en-us/windows/security/
+information-protection/bitlocker/bitlocker-overview.
 [3] Frankroj, Personal data encryption (pde). [Online]. Available: https://learn.microsoft.
 com/en-us/windows/security/information-protection/personal-data-encryption/
 overview-pde.
@@ -40,3 +53,6 @@ docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-
 [5] [ms-azod]: Security descriptor. [Online]. Available: https : / / learn . microsoft . com /
 en - us / openspecs / windows _ protocols / ms - azod / ec52bde3 - 9c86 - 4484 - 9080 -
 e72148a2d53b.
+[6] C. Tan, L. Zhang, and L. Bao, “A deep exploration of bitlocker encryption and security
+analysis,” in 2020 IEEE 20th International Conference on Communication Technology
+(ICCT), 2020, pp. 1070–1074. doi: 10.1109/ICCT50939.2020.9295908
