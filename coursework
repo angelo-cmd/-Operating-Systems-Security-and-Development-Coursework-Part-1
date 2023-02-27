@@ -1,58 +1,108 @@
 COMP7024- Operating Systems Security and Development Coursework- Part 1: Security of an OS- File System Security
 1	High-level description of the security features of Windows file system
-The windows 11 file system has different security features to ensure the three security pillars
-such as confidentiality, integrity and availability. The latest version of windows presents as a
-primary file system NTFS(New Technology File System). One of the oldest security features
-is NTFS permission; it is implemented to set sharing permissions for folders or drives [1].
-This feature differs from the user grant because permission is attached to objects, not files or
-entire drives. NTFS permission provides more granular control and is possible only on drives
-using NTFS technology. Another security feature is BitLocker, a full-disk encryption tool in the
-Windows file system that guards against unauthorised access to data in the event of theft or loss
-of the device. Data saved on the drive is encrypted by BitLocker using encryption techniques,
-rendering it unintelligible to anyone lacking the proper decryption key. This maintains the
-confidentiality of the information and helps stop sensitive information from getting into the
-wrong hands [2].
-The last feature this report will discuss is PDE ( personal data
-encryption ); it is introduced in the latest version of Windows 11 and provides an additional
-layer of encryption. In this case, the encryption is not performed on the entire drive or volumes
-but on the disk’s single files [3].
+The windows 11 version 22H2 file system has different security features to ensure the three
+security pillars: confidentiality, integrity and availability. The latest version of windows presents
+as a primary file system NTFS(New Technology File System). One of the oldest security features
+is NTFS permission; it is implemented to set sharing permissions for folders or drives [1]. This
+feature differs from the user grant because permission is attached to objects, not files or entire
+drives. Another security feature is BitLocker, a full-disk encryption feature that is built into
+some versions of Windows, a full-disk encryption tool in the Windows file system that guards
+agast unauthorised access to data in the event of theft or loss of the device [2]. Data saved on
+the drive is encrypted by BitLocker using encryption techniques, rendering it unintelligible to
+anyone lacking the proper decryption key. This maintains the confidentiality of the information
+and helps stop sensitive information from getting into the wrong hands [2]. The last feature this
+report will discuss is The TPM (Trusted Platform Module) chip, is a hardware-based security
+feature found in many modern Windows. The purpose of the TPM chip is to securely store
+cryptographic keys, and other sensitive data used for authentication purposes [3].
 2	Detailed description of how your selected OS supports and provides the listed security features.
 In Windows 11 operating system, the NTFS file system determines a security principal’s level
 of access and share permission to files and folders. Microsoft released the first version of NTFS
 in 2001 [4]. Permissions can be assigned at the user’s discretion by anyone who has ownership
-of a file or folder, Modify permissions, or Full Control permissions. Operating system files
-and folders are given default permission hierarchies when Windows is first installed, but a user
-may need to change these permissions to comply with specific security requirements [5]. When
-permission is set on a file or folder, the windows operating system link a security descriptor to
-that object. Indeed security settings of an object, like a file or directory, are defined by a security
-descriptor, which is a data structure in the NTFS file system. The security descriptor has four
-main components: owner, group, Discretionary Access Control List (DACL) and System Access
-Control List (SACL) [5].
-BitLocker protects your data, system files, and the Windows operating system by encrypting
-the whole hard drive. Advanced Encryption Standard (AES) and a Trusted Platform Module
-(TPM) chip, a piece of hardware that adds an additional degree of protection, are both used.
-Other authentication techniques supported by BitLocker include a PIN, a USB drive, and a
-network key.[riscrivere]
-Users must be logged in as an administrator and have a TPM chip installed on their computer
-in order to enable BitLocker on a Windows 11 machine. BitLocker can still be enabled even if
-the device lacks a TPM chip by creating a password for the encryption key or utilising a USB
-disc as a startup key[6].
-3	Comparison of the listed features in Windows 11 with IOS ...
+of a file or folder.NTFS permissions allow administrators more granular control over what files
+each user account has access. Operating system files and folders are given default permission
+hierarchies when Windows is first installed, but a user may need to change these permissions
+to comply with specific security requirements [5]. When permission is set on a file or folder, the
+windows operating system link a security descriptor to that object. Indeed security settings of
+an object, like a file or directory, are defined by a security descriptor, which is a data structure
+in the NTFS file system. The security descriptor has four main components: owner, group,
+Discretionary Access Control List (DACL) and System Access Control List (SACL) [5].
+The second feature is Bitlocker; it employs encryption techniques such as AES-256 or XTS-
+AES128 to safeguard data stored on hard drives or USB devices by encrypting it at rest, making
+it inaccessible without authentication credentials such as a PIN or password. It also enables
+users to build safe backups using external media like DVDs or flash drives, which may then be
+utilised if hardware fails. Users must be logged in as an administrator and have a TPM chip
+installed on their computer in order to enable BitLocker on a Windows 11 machine. BitLocker
+can still be enabled even if the device has no TPM chip by creating a password for the encryption
+key or utilising a USB disc as a startup key[6]. BitLocker has been improved with support for
+multiple authentication methods, including biometric verification as well as hardware keys like
+USB drives or smart cards. The last feature is the TPM chip, which uses hardware-based encryption and works by
+encrypting data stored on the hard drive and additionally providing authentication for various
+operations and processes. This ensures that only authorized users can access or modify files in
+the system, preventing malicious actors from gaining unauthorized access [7]. Furthermore, the
+TPM chip helps maintain secure boot processes by verifying digital signatures before allowing
+any software code into memory during start-up procedures [7]. TPM offers an additional layer
+of security and combined with different tools as Bitlocker, create a really secure environment
+against various attacks. Furthermore, this combination that any information you store remains
+protected from external threats and internal ones too, they are able to make sure that only you
+can view them whenever necessary.
+3	Comparison of the listed features in Windows 11 with MacOs
+3.1 BitLocker and FileVault
+BitLocker and FileVault are both full-disk encryption systems for securing data on a computer’s
+hard drive. Nonetheless, they are utilised on different operating systems and have some vari-
+ances in features and capabilities. FileVault uses XTS-AES-128 encryption with a 256-bit key
+to help prevent unauthorized access to your startup disk’s information but does not require a
+TPM chip for hardware-based encryption.[8] During the encryption procedure, FileVault needs
+to generate a recovery key, and it allows extra authentication methods like a password, a user
+account, or an iCloud account. One notable distinction between BitLocker and FileVault is
+that BitLocker supports hardware-based encryption through a TPM chip, but FileVault does
+not and instead relies on software-based encryption. Hardware-based encryption is often rated
+more secure than software-based encryption. Generally, also encryption issue has an influence
+on the breadth of tools’ weaknesses, and whole-disc encryption allowing and simplest solution
+[9]
+3.2 NTFS and APFS permission
+Ntfs and Apfs permissions are two different technologies used correspondingly in Windows and
+mac OS file systems. APFS permissions are used on macOS operating systems, including the
+last version, called mac OS Ventura. These type of permissions are based on access control lists
+(ACLs) or the traditional POSIX file system object permission, which can be used to specify
+access permissions for users and groups.[10] One of the main differences between NTFS permis-
+sions and APFS permissions is how they handle inheritance, this is the process of permissions
+propagating from a parent folder to its child folders and files. Using NTFS permission, they are
+inherited by default but can be disabled or modified depending on the use case. With APFS
+permissions, inheritance is not automatic and must be set up manually. NTFS permissions
+allow you to set permissions for files and folders in a way that takes into account different types
+of access (like read-only or modify). APFS permissions are more straightforward, dealing with
+only group permissions. In fact, APFS used the classic POSIX combined with ACL policies.
+APFS has three access levels for files: Read, Write, and Execute instead, NTFS has six access
+levels: Read, Read and Execute, List Folder Contents, Write, Modify, and Full.
 4	The effects that the listed security features have on application developers
 5	Conclusion
 References
-[1] Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
-[2] Bitlocker. [Online]. Available: https://learn.microsoft.com/en-us/windows/security/
-information-protection/bitlocker/bitlocker-overview.
-[3] Frankroj, Personal data encryption (pde). [Online]. Available: https://learn.microsoft.
-com/en-us/windows/security/information-protection/personal-data-encryption/
-overview-pde.
-[4] Archiveddocs, Ntfs technical reference: Local file systems. [Online]. Available: https://
-docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-
-2003/cc758691(v=ws.10).
+1] Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
+[2] Bitlocker. [Online]. Available: https : / / learn . microsoft . com / en - us / windows /
+security/information-protection/bitlocker/bitlocker-overview.
+[3] Dansimp, Trusted platform module (windows). [Online]. Available: https : / / learn .
+microsoft.com/en-us/windows/security/information-protection/tpm/trusted-
+platform-module-top-node.
+[4] Archiveddocs, Ntfs technical reference: Local file systems. [Online]. Available: https :
+/ / docs . microsoft . com / en - us / previous - versions / windows / it - pro / windows -
+server-2003/cc758691(v=ws.10).
 [5] [ms-azod]: Security descriptor. [Online]. Available: https : / / learn . microsoft . com /
 en - us / openspecs / windows _ protocols / ms - azod / ec52bde3 - 9c86 - 4484 - 9080 -
 e72148a2d53b.
 [6] C. Tan, L. Zhang, and L. Bao, “A deep exploration of bitlocker encryption and security
 analysis,” in 2020 IEEE 20th International Conference on Communication Technology
-(ICCT), 2020, pp. 1070–1074. doi: 10.1109/ICCT50939.2020.9295908
+(ICCT), 2020, pp. 1070–1074. doi: 10.1109/ICCT50939.2020.9295908.
+[7] Dansimp, How windows uses the tpm. [Online]. Available: https://learn.microsoft.
+com/en- us/windows/security/information- protection/tpm/how- windows- uses-
+the-tpm.
+[8] Use filevault to encrypt your mac startup disk, Oct. 2022. [Online]. Available: https :
+//support.apple.com/en-us/HT204837.
+[9] V. Moia and M. Henriques, “A comparison of encryption tools for disk data storage from
+digital forensics point of view,” in Anais do XVI Simp ́osio Brasileiro em Seguran ̧ca da
+Informa ̧c ̃ao e de Sistemas Computacionais, Niter ́oi: SBC, 2016, pp. 72–85. doi: 10.5753/
+sbseg.2016.19299. [Online]. Available: https://sol.sbc.org.br/index.php/sbseg/
+article/view/19299.
+[10] File system programming guide, Apr. 2018. [Online]. Available: https : / / developer .
+apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide
+FileSystemDetails/FileSystemDetails.html#//apple_ref/doc/uid/TP40010672-
+CH8-SW20.
