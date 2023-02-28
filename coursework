@@ -84,7 +84,10 @@ These two types of chips are similar, but they have different features. TPM is a
 for general purposes; various Operating systems, not only windows, can use it, but Apple T2
 is designed and optimised only for the macOS platform. Another difference is that TPM is
 soldered into the motherboard, but apple T2 Security Chip is a separate chip integrated into
-the logic board of Apple’s Mac devices [7] [11].
+the logic board of Apple’s Mac devices [7] [11]. The T2 has a 256-bit AES key (UID) within a
+secure enclave processor and is used to encrypt the SSD storage. No one has access to this key,
+which is burned into the chip. On the other hand, TPM is not secure as T2; indeed, TPM is
+still vulnerable to ROCA attack [12] [13].
 4 The effects that the listed security features have on ap-
 plication developers
 These three security features undoubtedly influenced the developer’s behaviour. While design-
