@@ -62,7 +62,8 @@ distinction between BitLocker and FileVault is that BitLocker supports hardware-
 cryption through a TPM chip, but FileVault does not and relies on software-based encryption.
 Hardware-based encryption is often rated more secure than software-based encryption. Gener-
 ally, encryption issue also influences the breadth of tools’ weaknesses, and whole-disc encryption
-allows the simplest solution [9].
+allows the simplest solution [9]. Another distinction is that BitLocker can encrypt individual
+disc partitions as well as provide email and file transfer encryption.
 3.2 NTFS and APFS permission
 Ntfs and Apfs permissions are two different technologies used correspondingly in Windows and
 mac OS file systems. APFS permissions are used on macOS operating systems, including the
@@ -96,15 +97,24 @@ understand these tools. Additionally, the developers have to pay attention to no
 conflict between privileges, and they do not have to alter encryption systems with the new
 extension developed.
 5 Conclusion
+system or its network connections. On the other hand, implementing these features requires a
+high level of knowledge and privilege in the system to not corrupt the system’s normal func-
+tioning. Windows documentation is unambiguous and can provide a massive help in order to
+understand these tools. Additionally, the developers have to pay attention to not create any
+conflict between privileges, and they do not have to alter encryption systems with the new
+extension developed.
+5 Conclusion
 Microsoft improves overall security by combining TPM, NTFS permission, and BitLocker into
 its operating systems. It ensures that users retain total control over their digital assets regardless
 of location. Finally, combining a TPM with the file system of Windows 11 provides higher
 levels of protection against malicious attacks while also providing convenience through better
 program performance due to its capacity to encrypt and decrypt data faster than old techniques.
 NTFS permission ensures that users retain total control over their digital information. Finally,
-Bitlocker is very reliable and straightforward to use for average users. In conclusion, Windows
-is constantly improving the security and reliability of its product, and windows has always
-proved to be one of the best products on the market.
+Bitlocker is very reliable and straightforward to use for average users. In conclusion, Windows is
+constantly improving the security and reliability of its product, and windows has always proved
+to be one of the best products on the market. On the other hand, creating its own security
+chip can improve the system’s security and add features like Deniable encryption, which could
+give the user different settings to protect their own data.
 References
 [1] Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
 [2] Bitlocker. [Online]. Available: https : / / learn . microsoft . com / en - us / windows /
