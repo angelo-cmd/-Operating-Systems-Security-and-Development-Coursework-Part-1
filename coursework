@@ -8,68 +8,69 @@ security pillars: confidentiality, integrity and availability. The latest versio
 as a primary file system NTFS(New Technology File System). One of the oldest security features
 is NTFS permission; it is implemented to set sharing permissions for folders or drives [1]. This
 feature differs from the user grant because permission is attached to objects, not files or entire
-drives. Another security feature is BitLocker, a full-disk encryption feature built into some
+drives [2]. Another security feature is BitLocker, a full-disk encryption feature built into some
 Windows versions, a full-disk encryption tool in the Windows file system that guards agast
-unauthorised access to data in the event of theft or loss of the device [2]. Data saved on
+unauthorised access to data in the event of theft or loss of the device [3]. Data saved on
 the drive is encrypted by BitLocker using encryption techniques, rendering it unintelligible
 to anyone lacking the proper decryption key. Bitlocker maintains the confidentiality of the
-information and helps stop sensitive information from getting into the wrong hands [2]. The
+information and helps stop sensitive information from getting into the wrong hands [3]. The
 last feature this report will discuss is The TPM (Trusted Platform Module) chip, a hardware-
 based security feature in many modern Windows OS. The purpose of the TPM chip is to
-securely store cryptographic keys and other sensitive data used for authentication purposes [3].
+securely store cryptographic keys and other sensitive data used for authentication purposes [4].
 2 Detailed description of how your selected OS supports
 and provides the listed security features.
 Windows 11 operating system, the NTFS file system determines a security principal’s level of
 access and share permission to files and folders. Microsoft released the first version of NTFS in
-2001 [4]. Permissions can be assigned by anyone who owns a file or folder at the user’s discretion.
+2001 [5]. Permissions can be assigned by anyone who owns a file or folder at the user’s discretion.
 NTFS permissions allow administrators more granular control over what files each user account
 can access. Operating system files and folders are given default permission hierarchies when
 Windows is first installed, but a user may need to change these permissions to comply with
-specific security requirements [5]. When the user sets the permission on a file or folder, the
+specific security requirements [6]. When the user sets the permission on a file or folder, the
 windows operating system links a security descriptor to that object. Indeed security settings
 of an object, like a file or directory, are defined by a security descriptor, a data structure
 in the NTFS file system. The security descriptor has four main components: owner, group,
-Discretionary Access Control List (DACL) and System Access Control List (SACL) [5].
+Discretionary Access Control List (DACL) and System Access Control List (SACL) [6].
 The second feature is Bitlocker; it employs encryption techniques such as AES-256 or XTS
-AES 128 to safeguard data stored on hard drives or USB devices by encrypting it , making
+AES 128 to safeguard data stored on hard drives or USB devices by encrypting it, making
 it inaccessible without authentication credentials such as a PIN or password. It also enables
 users to build safe backups using external media like DVDs or flash drives, which may be
 utilised if hardware fails. Users must be logged in as administrators and have a TPM chip
 installed on their computer to enable BitLocker on a Windows 11 machine. BitLocker can
 still be enabled even if the device has no TPM chip by creating a password for the encryption
-key or utilising a USB disc as a startup key [6]. BitLocker has been improved with support
+key or utilising a USB disc as a startup key [7]. BitLocker has been improved with support
 for multiple authentication methods, including biometric verification and hardware keys like
-USB drives or smart cards. The last feature is the TPM chip, which uses hardware-based
+USB drives or smart cards. 
+The last feature is the TPM chip, which uses hardware-based
 encryption and works by encrypting data stored on the hard drive and additionally providing
 authentication for various operations and processes. TPM ensures that only authorised users
 can access or modify files in the system, preventing malicious actors from gaining unauthorised
-access [7].Furthermore, the TPM chip helps maintain secure boot processes by verifying digital
-signatures before allowing any software code into memory during startup procedures [7]. TPM
-offers an additional layer of security and, combined with different tools such as Bitlocker, creates
-a secure environment against various attacks. Furthermore, this combination ensures that any
-stored information remains protected from external and internal threats. They can make sure
-that only those who own the access key can view them whenever necessary.
+access [8]. Furthermore, the TPM chip helps maintain secure boot processes by verifying
+digital signatures before allowing any software code into memory during startup procedures [8].
+TPM offers an additional layer of security and, combined with different tools such as Bitlocker,
+creates a secure environment against various attacks. Moreover, this combination ensures that
+any stored information remains protected from external and internal threats. They can make
+sure that only those who own the access key can view them whenever necessary.
 3 Comparison of the listed features in Windows 11 with
 macOS
 3.1 BitLocker and FileVault
 BitLocker and FileVault are full-disk encryption systems for securing data on a computer’s hard
-drive. Nonetheless, they are utilised on different operating systems and have some variances in
-features and capabilities. FileVault uses XTS-AES-128 encryption with a 256-bit key to help
-prevent unauthorised access to the startup disk’s information but does not require a TPM chip
-[8]. During the encryption procedure, FileVault generates a recovery key, allowing different
-authentication methods like a password, a user account, or an iCloud account. One notable
-distinction between BitLocker and FileVault is that BitLocker supports hardware-based en-
-cryption through a TPM chip, but FileVault does not and relies on software-based encryption.
-Hardware-based encryption is often rated more secure than software-based encryption. Gener-
-ally, encryption issue also influences the breadth of tools’ weaknesses, and whole-disc encryption
-allows the simplest solution [9]. Another distinction is that BitLocker can encrypt individual
-disc partitions as well as provide email and file transfer encryption.
+drive. Nonetheless, they are utilised on different operating systems and have some variances
+in features and capabilities. FileVault uses XTS-AES-128 encryption with a 256-bit key to
+help prevent unauthorised access to the startup disk’s information but does not require a TPM
+chip [9]. During the encryption procedure, FileVault generates a recovery key, allowing different
+authentication methods like a password, a user account, or an iCloud account. One notable dis-
+tinction between BitLocker and FileVault is that BitLocker supports hardware-based encryption
+through a TPM chip, but FileVault only relies on software-based encryption. Hardware-based
+encryption is often rated more secure than software-based encryption. Generally, encryption
+issue also influences the breadth of tools’ weaknesses, and whole-disc encryption allows the sim-
+plest solution [10]. Another distinction is that BitLocker can encrypt individual disc partitions
+as well as provide email and file transfer encryption.
 3.2 NTFS and APFS permission
 Ntfs and Apfs permissions are two different technologies used correspondingly in Windows and
 mac OS file systems. APFS permissions are used on macOS operating systems, including the
 last version, mac OS Ventura. These permissions are based on access control lists (ACLs)
 or the traditional POSIX file system object permission, which can be used to specify access
-permissions for users and groups [10]. One of the main differences between NTFS and APFS
+permissions for users and groups [11]. One of the main differences between NTFS and APFS
 permissions is how they handle inheritance, this is the process of permissions propagating from
 a parent folder to its child folders and files. NTFS permissions are inherited by default but can
 be disabled or modified depending on the use case. With APFS permissions, inheritance is not
@@ -78,16 +79,16 @@ for files and folders in a way that considers different types of access (like re
 APFS permissions are more straightforward, dealing with only group permissions. In fact,
 APFS used the classic POSIX combined with ACL policies. APFS has three access levels for
 files: Read, Write and Execute. Instead, NTFS has six access levels: Read, Read and Execute,
-List Folder Contents, Write, Modify, and Full Control.
+List Folder Contents, Write, Modify, and Full Control
 3.3 TPM and Apple T2 Security Chip
 These two types of chips are similar, but they have different features. TPM is a chip created
 for general purposes; various Operating systems, not only windows, can use it, but Apple T2
 is designed and optimised only for the macOS platform. Another difference is that TPM is
 soldered into the motherboard, but apple T2 Security Chip is a separate chip integrated into
-the logic board of Apple’s Mac devices [7] [11]. The T2 has a 256-bit AES key (UID) within a
-secure enclave processor and is used to encrypt the SSD storage. No one has access to this key,
+the logic board of Apple’s Mac devices [8] [12]. The T2 has a 256-bit AES key (UID) within a
+secure enclave processor and is used to encrypt the SSD storage. No one can access this key,
 which is burned into the chip. On the other hand, TPM is not secure as T2; indeed, TPM is
-still vulnerable to ROCA attack [12] [13].
+still vulnerable to ROCA attack [13] [14].
 4 The effects that the listed security features have on ap-
 plication developers
 These three security features undoubtedly influenced the developer’s behaviour. While design-
@@ -98,7 +99,11 @@ high level of knowledge and privilege in the system to not corrupt the system’
 tioning. Windows documentation is unambiguous and can provide a massive help in order to
 understand these tools. Additionally, the developers have to pay attention to not create any
 conflict between privileges, and they do not have to alter encryption systems with the new
-extension developed.
+extension developed. Furthermore, developers may need to ensure that their applications can
+properly access and interact with BitLocker-encrypted drives using the dedicated library. Also,
+implementing features dealing with NTFS permission, developers have to keep attention to not
+create vulnerabilities in the system and not consider the importance of information stored in
+the system.
 5 Conclusion
 system or its network connections. On the other hand, implementing these features requires a
 high level of knowledge and privilege in the system to not corrupt the system’s normal func-
@@ -109,46 +114,51 @@ extension developed.
 5 Conclusion
 Microsoft improves overall security by combining TPM, NTFS permission, and BitLocker into
 its operating systems. It ensures that users retain total control over their digital assets regardless
-of location. Finally, combining a TPM with the file system of Windows 11 provides higher
-levels of protection against malicious attacks while also providing convenience through better
-program performance due to its capacity to encrypt and decrypt data faster than old techniques.
-NTFS permission ensures that users retain total control over their digital information. Finally,
-Bitlocker is very reliable and straightforward to use for average users. In conclusion, Windows is
-constantly improving the security and reliability of its product, and windows has always proved
-to be one of the best products on the market. On the other hand, creating its own security
-chip can improve the system’s security and add features like Deniable encryption, which could
-give the user different settings to protect their own data.
+of location. Finally, combining a TPM with the file system of Windows 11 provides higher levels
+of protection against malicious attacks while also providing convenience through better program
+performance due to its capacity to encrypt and decrypt data faster than old techniques. Finally,
+Bitlocker is very reliable and straightforward to use for average users. In conclusion, Windows
+is constantly improving the security and reliability of its product, and it has always proved to
+be one of the best products on the market. On the other hand, creating its own security chip
+can improve the system’s security and add features like Deniable encryption, which could give
+users different settings to protect their data.
 References
 [1] Ntfs permissions. [Online]. Available: https://www.ntfs.com/ntfs-permissions.htm.
-[2] Bitlocker. [Online]. Available: https : / / learn . microsoft . com / en - us / windows /
+[2] User rights vs. ntfs permissions. [Online]. Available: https : / / www . ntfs . com / ntfs -
+permissions-user-rights.htm.
+[3] Bitlocker. [Online]. Available: https : / / learn . microsoft . com / en - us / windows /
 security/information-protection/bitlocker/bitlocker-overview.
-[3] Dansimp, Trusted platform module (windows). [Online]. Available: https : / / learn .
+[4] Dansimp, Trusted platform module (windows). [Online]. Available: https : / / learn .
 microsoft.com/en-us/windows/security/information-protection/tpm/trusted-
 platform-module-top-node.
-[4] Archiveddocs, Ntfs technical reference: Local file systems. [Online]. Available: https :
+[5] Archiveddocs, Ntfs technical reference: Local file systems. [Online]. Available: https :
 / / docs . microsoft . com / en - us / previous - versions / windows / it - pro / windows -
 server-2003/cc758691(v=ws.10).
-[5] [ms-azod]: Security descriptor. [Online]. Available: https : / / learn . microsoft . com /
+[6] [ms-azod]: Security descriptor. [Online]. Available: https : / / learn . microsoft . com /
 en - us / openspecs / windows _ protocols / ms - azod / ec52bde3 - 9c86 - 4484 - 9080 -
 e72148a2d53b.
-[6] C. Tan, L. Zhang, and L. Bao, “A deep exploration of bitlocker encryption and security
+[7] C. Tan, L. Zhang, and L. Bao, “A deep exploration of bitlocker encryption and security
 analysis,” in 2020 IEEE 20th International Conference on Communication Technology
 (ICCT), 2020, pp. 1070–1074. doi: 10.1109/ICCT50939.2020.9295908.
-[7] Dansimp, How windows uses the tpm. [Online]. Available: https://learn.microsoft.
+[8] Dansimp, How windows uses the tpm. [Online]. Available: https://learn.microsoft.
 com/en- us/windows/security/information- protection/tpm/how- windows- uses-
 the-tpm.
-[8] Use filevault to encrypt your mac startup disk, Oct. 2022. [Online]. Available: https :
+[9] Use filevault to encrypt your mac startup disk, Oct. 2022. [Online]. Available: https :
 //support.apple.com/en-us/HT204837.
-[9] V. Moia and M. Henriques, “A comparison of encryption tools for disk data storage from
+[10] V. Moia and M. Henriques, “A comparison of encryption tools for disk data storage from
 digital forensics point of view,” in Anais do XVI Simp ́osio Brasileiro em Seguran ̧ca da
 Informa ̧c ̃ao e de Sistemas Computacionais, Niter ́oi: SBC, 2016, pp. 72–85. doi: 10.5753/
 sbseg.2016.19299. [Online]. Available: https://sol.sbc.org.br/index.php/sbseg/
 article/view/19299.
-[10] File system programming guide, Apr. 2018. [Online]. Available: https : / / developer .
+[11] File system programming guide, Apr. 2018. [Online]. Available: https : / / developer .
 apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide
 FileSystemDetails/FileSystemDetails.html#//apple_ref/doc/uid/TP40010672-
 CH8-SW20.
-[11] [Online]. Available: https://www.apple.com/mideast/mac/docs/Apple_T2_Security_
+[12] [Online]. Available: https://www.apple.com/mideast/mac/docs/Apple_T2_Security_
 Chip_Overview.pdf.
-
-
+[13] Roca: Infineon tpm and secure element rsa vulnerability guidance. [Online]. Available:
+https://www.ncsc.gov.uk/guidance/roca- infineon- tpm- and- secure- element-
+rsa-vulnerability-guidance.
+[14] P. B. B. OBE, For security, how bad are tpms and how good is the apple t2 chip? Jul. 2020.
+[Online]. Available: https://medium.com/asecuritysite-when-bob-met-alice/for-
+security-how-bad-are-tpms-and-how-good-is-the-apple-t2-chip-a561bda34e6
